@@ -11,10 +11,10 @@ function editNames(){
         return;
 
     }
-    document.querySelector("p.player1")
+    document.querySelector("p.Player1")
     .innerHTML = player1;
 
-    document.querySelector("p.player2")
+    document.querySelector("p.Player2")
     .innerHTML = player2;
 }
 
@@ -27,13 +27,13 @@ function rollTheDice(){
 
     var result =document.querySelector("h1")
     setTimeout(() =>{
-        var randomNumber1 = (Math.random()*6)+1;
-        var randomNumber2 = (Math.random()*6)+1;
+        var randomNumber1 = Math.floor(Math.random()*6)+1;
+        var randomNumber2 = Math.floor(Math.random()*6)+1;
 
 
 
         diceNum1.setAttribute("src","dice"+randomNumber1+ ".png");
-        diceNum1.setAttribute("src","dice"+randomNumber2+ ".png");
+        diceNum2.setAttribute("src","dice"+randomNumber2+ ".png");
 
 if(randomNumber1 === randomNumber2){
     result.innerHTML = "Draw!";
@@ -41,11 +41,12 @@ if(randomNumber1 === randomNumber2){
 else if(randomNumber1<randomNumber2){
 result.innerHTML = (player2+"WINS!");
 }
-else(
+else{
   result.innerHTML = (player1+"WINS!")  
-)
+}
 
     }, 2500);
 
     
 }
+
